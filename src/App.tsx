@@ -125,62 +125,62 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Hero Section */}
-      <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pb-24 md:pb-32">
         {/* Hero Content */}
         <div 
           className={`
-            transition-all duration-1000 ease-out transform
+            transition-all duration-1500 ease-out transform
             ${isCompact 
-              ? 'fixed top-4 right-4 z-30 scale-50 origin-center' 
-              : 'relative scale-100'
+              ? 'fixed top-8 right-8 z-30 scale-90 origin-top-right translate-x-4 translate-y-4' 
+              : 'relative scale-100 translate-x-0 translate-y-0'
             }
           `}
         >
           <div className="text-center">
             {/* Jarvis-style circular rings around photo */}
-            <div className="relative mt-12 mb-16 flex justify-center">
-              <div className="relative w-56 h-56 md:w-72 md:h-72 flex items-center justify-center">
+            <div className="relative mt-12 mb-8 flex justify-center transition-all duration-1000 ease-out">
+              <div className="relative w-56 h-56 md:w-72 md:h-72 flex items-center justify-center transition-all duration-1000 ease-out">
                 {/* Outer ring */}
-                <div className="absolute inset-4 md:inset-6 border-2 border-green-400 rounded-full animate-spin-slow opacity-60"></div>
+                <div className="absolute inset-4 md:inset-6 border-2 border-green-400 rounded-full animate-spin-slow opacity-60 transition-all duration-1000 ease-out"></div>
                 {/* Middle ring */}
-                <div className="absolute inset-8 md:inset-10 border border-green-300 rounded-full animate-spin-reverse opacity-80"></div>
+                <div className="absolute inset-8 md:inset-10 border border-green-300 rounded-full animate-spin-reverse opacity-80 transition-all duration-1000 ease-out"></div>
                 {/* Inner ring */}
-                <div className="absolute inset-16 md:inset-20 border border-green-500 rounded-full opacity-90"></div>
+                <div className="absolute inset-16 md:inset-20 border border-green-500 rounded-full opacity-90 transition-all duration-1000 ease-out"></div>
                 {/* Scanning lines */}
-                <div className="absolute inset-0 border-t-2 border-transparent border-t-green-400 rounded-full animate-spin"></div>
-                <div className="absolute inset-2 border-r-2 border-transparent border-r-green-300 rounded-full animate-spin-reverse"></div>
-                <div className="absolute inset-6 border-b-2 border-transparent border-b-green-500 rounded-full animate-spin-slow"></div>
+                <div className="absolute inset-0 border-t-2 border-transparent border-t-green-400 rounded-full animate-spin transition-all duration-1000 ease-out"></div>
+                <div className="absolute inset-2 border-r-2 border-transparent border-r-green-300 rounded-full animate-spin-reverse transition-all duration-1000 ease-out"></div>
+                <div className="absolute inset-6 border-b-2 border-transparent border-b-green-500 rounded-full animate-spin-slow transition-all duration-1000 ease-out"></div>
                 
                 {/* Photo section - perfectly centered */}
-                <div className="relative z-10 w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-green-400 to-green-600 rounded-full border-4 border-green-400 shadow-2xl shadow-green-400/50 flex items-center justify-center mb-12 overflow-hidden">
-                  <img src="/profile.jpg" alt="Profile Photo" className="w-full h-full object-cover rounded-full" />
+                <div className="relative z-10 w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-green-400 to-green-600 rounded-full border-4 border-green-400 shadow-2xl shadow-green-400/50 flex items-center justify-center overflow-hidden transition-all duration-1000 ease-out">
+                  <img src="/profile.jpg" alt="Profile Photo" className="w-full h-full object-cover rounded-full transition-all duration-1000 ease-out" />
                 </div>
               </div>
             </div>
             
             {/* Name */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-mono font-bold text-green-400 mb-4 animate-shimmer">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-mono font-bold text-green-400 mb-4 animate-shimmer transition-all duration-1000 ease-out">
               HIMANSHU VERMA
             </h1>
             
             {/* Role Description */}
-            <div className="text-green-300 font-mono text-sm md:text-lg mb-8 space-y-1">
+            <div className="text-green-300 font-mono text-sm md:text-lg mb-8 space-y-1 transition-all duration-1000 ease-out">
               <div>AI/ML Engineer | Full Stack Developer | DevOps Practitioner</div>
             </div>
             
             {/* Stats - Only show when not compact */}
-            <div className={`flex flex-wrap justify-center gap-6 md:gap-12 text-center transition-opacity duration-1000 ${isCompact ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-              <div className="bg-gray-900 border border-green-400 rounded-lg p-4 min-w-[120px] hover:bg-gray-800 transition-all duration-300">
+            <div className={`flex flex-wrap justify-center gap-6 md:gap-12 text-center transition-all duration-1000 ease-out ${isCompact ? 'opacity-0 pointer-events-none scale-95' : 'opacity-100 scale-100'}`}>
+              <div className="bg-gray-900 border border-green-400 rounded-lg p-4 min-w-[120px] hover:bg-gray-800 transition-all duration-500 ease-out hover:scale-105">
                 <div className="text-2xl md:text-3xl font-bold text-green-400 font-mono">{projectCount}</div>
                 <div className="text-green-300 text-xs md:text-sm font-mono">PROJECTS</div>
               </div>
               
-              <div className="bg-gray-900 border border-green-400 rounded-lg p-4 min-w-[120px] hover:bg-gray-800 transition-all duration-300">
+              <div className="bg-gray-900 border border-green-400 rounded-lg p-4 min-w-[120px] hover:bg-gray-800 transition-all duration-500 ease-out hover:scale-105">
                 <div className="text-2xl md:text-3xl font-bold text-green-400 font-mono">6+</div>
                 <div className="text-green-300 text-xs md:text-sm font-mono">MONTHS EXP</div>
               </div>
               
-              <div className="bg-gray-900 border border-green-400 rounded-lg p-4 min-w-[120px] hover:bg-gray-800 transition-all duration-300">
+              <div className="bg-gray-900 border border-green-400 rounded-lg p-4 min-w-[120px] hover:bg-gray-800 transition-all duration-500 ease-out hover:scale-105">
                 <div className="text-2xl md:text-3xl font-bold text-green-400 font-mono">8+</div>
                 <div className="text-green-300 text-xs md:text-sm font-mono">TECHNOLOGIES</div>
               </div>
@@ -189,7 +189,7 @@ function App() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce transition-opacity duration-1000 ${isCompact ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`mt-8 flex flex-col items-center animate-bounce transition-all duration-1000 ease-out ${isCompact ? 'opacity-0 pointer-events-none scale-95' : 'opacity-100 scale-100'}`}> 
           <div className="text-green-400 font-mono text-sm mb-2">SCROLL DOWN</div>
           <div className="w-6 h-10 border-2 border-green-400 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-green-400 rounded-full mt-2 animate-pulse"></div>
@@ -198,20 +198,20 @@ function App() {
       </div>
 
       {/* Content Section */}
-      <div className={`min-h-screen transition-all duration-1000 ${isCompact ? 'pt-20' : 'pt-0'}`}>
-        <div className="flex items-center justify-center min-h-screen px-4 py-20">
-          <div className="max-w-2xl w-full">
-            <div className="text-center mb-8">
-              <div className="text-green-400 font-mono text-sm mb-2">
+      <div className={`min-h-screen transition-all duration-1500 ease-out ${isCompact ? 'pt-32' : 'pt-0'}`}>
+        <div className={`flex items-center justify-center min-h-screen px-4 py-20 transition-all duration-1500 ease-out ${isCompact ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'}`}>
+          <div className={`max-w-2xl w-full transition-all duration-1000 ease-out ${isCompact ? 'mr-48 md:mr-64' : ''}`}>
+            <div className="text-center mb-8 transition-all duration-1000 ease-out">
+              <div className="text-green-400 font-mono text-sm mb-2 transition-all duration-500 ease-out">
                 <span className="animate-pulse">{'>'}</span> PORTFOLIO_SYSTEM_ACTIVE
               </div>
-              <div className="text-green-400 font-mono text-xs opacity-70">
+              <div className="text-green-400 font-mono text-xs opacity-70 transition-all duration-500 ease-out">
                 SELECT_MODULE_TO_ACCESS
               </div>
             </div>
 
             {/* Accordion Menu */}
-            <div className="space-y-4">
+            <div className="space-y-4 transition-all duration-1000 ease-out">
               <AccordionItem
                 title="ABOUT"
                 isActive={activeModal === 'about'}

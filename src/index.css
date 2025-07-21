@@ -35,10 +35,10 @@ body {
     opacity: 0;
   }
   5% {
-    opacity: 0.4;
+    opacity: 0.35;
   }
   95% {
-    opacity: 0.4;
+    opacity: 0.35;
   }
   100% {
     transform: translateY(calc(100vh + 200px));
@@ -104,8 +104,17 @@ body {
   }
 }
 
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0.2;
+  }
+}
+
 .animate-matrix-rain-continuous {
-  animation: matrix-rain-continuous 6s linear infinite;
+  animation: matrix-rain-continuous 10s linear infinite;
 }
 
 .animate-matrix-rain {
@@ -126,6 +135,10 @@ body {
 
 .animate-shimmer {
   animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1.5s ease-in-out infinite;
 }
 
 /* Jarvis-style animations */
@@ -256,7 +269,7 @@ body {
 @media (max-width: 767px) {
   /* Reduce animation intensity on mobile for better performance */
   .animate-matrix-rain-continuous {
-    animation-duration: 8s; /* Slower on mobile */
+    animation-duration: 12s; /* Slower on mobile for smoother motion */
   }
   
   /* Optimize text rendering on mobile */
